@@ -1,0 +1,19 @@
+{
+	"name": "mhujer/javascript-error-handler-bundle",
+	"type": "library",
+	"description": "",
+	"keywords": [
+		"javascript",
+		"symfony",
+		"bundle"
+	],
+	"homepage": "https://github.com/mhujer/JavaScriptErrorHandlerBundle",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Martin Hujer",
+			"email": "mhujer@gmail.com",
+			"homepage": "https://www.martinhujer.cz"
+		}
+	]
+}
