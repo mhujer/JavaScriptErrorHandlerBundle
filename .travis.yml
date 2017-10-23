@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+env:
+  - # default environment without variables
+  - COMPOSER_DEPENDENCIES_OPTIONS="--prefer-lowest --prefer-stable"
+
+install:
+  - composer update --no-progress --no-interaction --no-suggest ${COMPOSER_DEPENDENCIES_OPTIONS}
+
+script:
+  - composer run build
+
+after_script:
+  - php vendor/bin/coveralls -v

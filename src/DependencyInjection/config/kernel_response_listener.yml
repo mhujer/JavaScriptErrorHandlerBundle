@@ -1,0 +1,5 @@
+services:
+    Mhujer\JavaScriptErrorHandlerBundle\EventListener\JsErrorToAlertListener:
+        tags:
+            -
+                name: kernel.event_subscriber

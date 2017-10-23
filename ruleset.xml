@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="JavaScriptErrorHandlerBundle">
+	<exclude-pattern>vendor/</exclude-pattern>
+	<rule ref="vendor/consistence/coding-standard/Consistence/ruleset.xml">
+		<!-- we don't want to have FQCN after extends/implements -->
+		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameAfterKeyword"/>
+	</rule>
+</ruleset>
