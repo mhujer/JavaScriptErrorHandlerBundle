@@ -52,7 +52,7 @@ class JsErrorToAlertListener implements EventSubscriberInterface
 
 		if ($pos !== false) {
 			$toolbar = "\n\n" . '
-	<script type="text/javascript">
+	<script type="text/javascript" id="mhujer-javascript-error-handler-bundle">
 		window.onerror = function (errorMessage, url, line, col, error) {
 			alert(
 				errorMessage + "\n\n" +
