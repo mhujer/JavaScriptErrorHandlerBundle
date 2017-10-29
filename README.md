@@ -32,13 +32,13 @@ class AppKernel extends \Symfony\Component\HttpKernel\Kernel
 
 Configuration
 -------
-The Bundle is automatically enabled only in `dev` mode (by using `kernel.debug` configuration option).
+The Bundle is automatically enabled only in `dev` mode (by using `kernel.debug` configuration parameter).
 
 You can configure it manually by adding this to your `config.yml`:
 
 ```yaml
 java_script_error_handler:
-    enabled: '%kernel.debug%'
+    enabled: true # or false
 ```
 
 
