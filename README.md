@@ -55,6 +55,11 @@ Author
 Changelog
 ----------
 
+### 1.1 (2018-02-08)
+Fixed support for Symfony 4 and Flex
+
+- [#3](https://github.com/mhujer/JavaScriptErrorHandlerBundle/pull/3) Symfony 4 + Flex support
+
 ### 1.0 (2017-10-29)
 As we are already using the Bundle at [**@driveto**](https://github.com/driveto) and with the new Symfony container tests, I'm fine with releasing it as 1.0.
 
