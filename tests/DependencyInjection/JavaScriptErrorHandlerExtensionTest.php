@@ -12,7 +12,10 @@ class JavaScriptErrorHandlerExtensionTest extends AbstractExtensionTestCase
 
 	private const LISTENER_CLASS_NAME = JsErrorToAlertListener::class;
 
-	protected function getContainerExtensions()
+	/**
+	 * @return \Symfony\Component\DependencyInjection\Extension\Extension[]
+	 */
+	protected function getContainerExtensions(): array
 	{
 		return [
 			new JavaScriptErrorHandlerExtension(),

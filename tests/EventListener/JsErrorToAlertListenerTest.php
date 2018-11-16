@@ -29,7 +29,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	 * @param string $responseBody
 	 * @param string $expectedResponse
 	 */
-	public function testInjectScript(string $responseBody, string $expectedResponse)
+	public function testInjectScript(string $responseBody, string $expectedResponse): void
 	{
 		$listener = new JsErrorToAlertListener();
 		$injectScriptReflection = new ReflectionMethod($listener, 'injectScript');
@@ -47,7 +47,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	 * @param string $responseBody
 	 * @param string $expectedResponse
 	 */
-	public function testScriptIsInjected(string $responseBody, string $expectedResponse)
+	public function testScriptIsInjected(string $responseBody, string $expectedResponse): void
 	{
 		$response = new Response($responseBody);
 
@@ -103,7 +103,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	 * @dataProvider redirectCodesDataProvider
 	 * @param int $statusCode
 	 */
-	public function testScriptIsNotInjectedOnRedirection(int $statusCode)
+	public function testScriptIsNotInjectedOnRedirection(int $statusCode): void
 	{
 		$response = new Response(self::BASIC_HTML, $statusCode);
 
@@ -123,7 +123,10 @@ class JsErrorToAlertListenerTest extends TestCase
 		);
 	}
 
-	public function redirectCodesDataProvider()
+	/**
+	 * @return int[][]
+	 */
+	public function redirectCodesDataProvider(): array
 	{
 		return [
 			[301],
@@ -253,6 +256,9 @@ class JsErrorToAlertListenerTest extends TestCase
 		);
 	}
 
+	/**
+	 * @return \PHPUnit_Framework_MockObject_MockObject|\Symfony\Component\HttpKernel\Kernel
+	 */
 	protected function getKernelMock()
 	{
 		/** @var \Symfony\Component\HttpKernel\Kernel|\PHPUnit_Framework_MockObject_MockObject $kernelMock */
@@ -263,7 +269,12 @@ class JsErrorToAlertListenerTest extends TestCase
 		return $kernelMock;
 	}
 
-	protected function getRequestMock($isXmlHttpRequest = false, $requestFormat = 'html')
+	/**
+	 * @param bool $isXmlHttpRequest
+	 * @param string $requestFormat
+	 * @return \PHPUnit_Framework_MockObject_MockObject|\Symfony\Component\HttpFoundation\Request
+	 */
+	protected function getRequestMock(bool $isXmlHttpRequest = false, string $requestFormat = 'html')
 	{
 		/** @var \Symfony\Component\HttpFoundation\Request|\PHPUnit_Framework_MockObject_MockObject $request */
 		$request = $this

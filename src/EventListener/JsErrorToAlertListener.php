@@ -30,16 +30,24 @@ class JsErrorToAlertListener implements EventSubscriberInterface
 			return;
 		}
 
-		if ($response->headers->has('Content-Type') && strpos($response->headers->get('Content-Type'), 'html') === false) {
-			return;
+		if ($response->headers->has('Content-Type')) {
+			/** @var string $contentTypeHeader */
+			$contentTypeHeader = $response->headers->get('Content-Type');
+			if (strpos($contentTypeHeader, 'html') === false) {
+				return;
+			}
 		}
 
 		if ($request->getRequestFormat() !== 'html') {
 			return;
 		}
 
-		if ($response->headers->has('Content-Disposition') && stripos($response->headers->get('Content-Disposition'), 'attachment;') !== false) {
-			return;
+		if ($response->headers->has('Content-Disposition')) {
+			/** @var string $contentDispositionHeader */
+			$contentDispositionHeader = $response->headers->get('Content-Disposition');
+			if (stripos($contentDispositionHeader, 'attachment;') !== false) {
+				return;
+			}
 		}
 
 		$this->injectScript($response, $request);
