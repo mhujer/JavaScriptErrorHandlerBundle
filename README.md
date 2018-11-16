@@ -44,7 +44,7 @@ java_script_error_handler:
 
 Requirements
 ------------
-PHP 7.1/7.2 and Symfony 3.3+.
+PHP 7.1 or higher and Symfony 3.3+.
 
 
 Author
