@@ -55,6 +55,9 @@ Author
 Changelog
 ----------
 
+### 1.2 (2018-11-16)
+- PHP 7.3 compatibility
+
 ### 1.1 (2018-02-08)
 Fixed support for Symfony 4 and Flex
 
