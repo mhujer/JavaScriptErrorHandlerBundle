@@ -22,8 +22,8 @@ class Configuration implements ConfigurationInterface
 
 	public function getConfigTreeBuilder(): TreeBuilder
 	{
-		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root('java_script_error_handler');
+		$treeBuilder = new TreeBuilder('java_script_error_handler');
+		$rootNode = $treeBuilder->getRootNode();
 
 		// @codingStandardsIgnoreStart tree is indented for better readability
 		$rootNode

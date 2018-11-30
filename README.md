@@ -55,6 +55,9 @@ Author
 Changelog
 ----------
 
+### 1.3 (2018-XX-XX)
+- Symfony 4.2 compatibility
+
 ### 1.2 (2018-11-16)
 - PHP 7.3 compatibility
 
