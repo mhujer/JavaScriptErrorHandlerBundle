@@ -57,6 +57,7 @@ Changelog
 
 ### 1.3 (2018-XX-XX)
 - Symfony 4.2 compatibility
+- dropped support for PHP 7.1 as it is no longer supported
 
 ### 1.2 (2018-11-16)
 - PHP 7.3 compatibility
