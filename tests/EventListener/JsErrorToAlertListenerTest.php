@@ -275,11 +275,11 @@ class JsErrorToAlertListenerTest extends TestCase
 	}
 
 	/**
-	 * @return \PHPUnit_Framework_MockObject_MockObject|\Symfony\Component\HttpKernel\Kernel
+	 * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpKernel\Kernel
 	 */
 	protected function getKernelMock()
 	{
-		/** @var \Symfony\Component\HttpKernel\Kernel|\PHPUnit_Framework_MockObject_MockObject $kernelMock */
+		/** @var \Symfony\Component\HttpKernel\Kernel|\PHPUnit\Framework\MockObject\MockObject $kernelMock */
 		$kernelMock = $this
 			->getMockBuilder(Kernel::class)
 			->disableOriginalConstructor()
@@ -290,11 +290,11 @@ class JsErrorToAlertListenerTest extends TestCase
 	/**
 	 * @param bool $isXmlHttpRequest
 	 * @param string $requestFormat
-	 * @return \PHPUnit_Framework_MockObject_MockObject|\Symfony\Component\HttpFoundation\Request
+	 * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\Request
 	 */
 	protected function getRequestMock(bool $isXmlHttpRequest = false, string $requestFormat = 'html')
 	{
-		/** @var \Symfony\Component\HttpFoundation\Request|\PHPUnit_Framework_MockObject_MockObject $request */
+		/** @var \Symfony\Component\HttpFoundation\Request|\PHPUnit\Framework\MockObject\MockObject $request */
 		$request = $this
 			->getMockBuilder(Request::class)
 			->setMethods([
