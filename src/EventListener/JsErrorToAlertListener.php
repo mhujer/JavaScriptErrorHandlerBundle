@@ -56,6 +56,10 @@ class JsErrorToAlertListener implements EventSubscriberInterface
 	protected function injectScript(Response $response, Request $request): void
 	{
 		$content = $response->getContent();
+		if ($content === false) {
+			return;
+		}
+
 		$pos = stripos($content, '<head>');
 
 		if ($pos !== false) {

@@ -9,6 +9,7 @@ use ReflectionMethod;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Kernel;
@@ -132,6 +133,23 @@ class JsErrorToAlertListenerTest extends TestCase
 			[301],
 			[302],
 		];
+	}
+
+	public function testScriptIsNotInjectedToStreamedResponse(): void
+	{
+		$response = new StreamedResponse();
+
+		$event = new FilterResponseEvent(
+			$this->getKernelMock(),
+			$this->getRequestMock(),
+			HttpKernelInterface::MASTER_REQUEST,
+			$response
+		);
+
+		$listener = new JsErrorToAlertListener();
+		$listener->onKernelResponse($event);
+
+		$this->assertFalse($response->getContent());
 	}
 
 	public function testScriptIsNotInjectedOnSubRequest(): void

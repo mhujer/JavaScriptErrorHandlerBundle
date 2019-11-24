@@ -18,12 +18,12 @@
 	],
 	"require": {
 		"php": "~7.2",
-		"symfony/config": "^4.2",
-		"symfony/dependency-injection": "^4.2",
-		"symfony/event-dispatcher": "^4.2",
-		"symfony/expression-language": "^4.2",
-		"symfony/http-foundation": "^4.2",
-		"symfony/http-kernel": "^4.2"
+		"symfony/config": "^4.3",
+		"symfony/dependency-injection": "^4.3",
+		"symfony/event-dispatcher": "^4.3",
+		"symfony/expression-language": "^4.3",
+		"symfony/http-foundation": "^4.3.4",
+		"symfony/http-kernel": "^4.3"
 	},
 	"require-dev": {
 		"consistence/coding-standard": "3.5",
