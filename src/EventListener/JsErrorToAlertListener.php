@@ -7,13 +7,13 @@ namespace Mhujer\JavaScriptErrorHandlerBundle\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 class JsErrorToAlertListener implements EventSubscriberInterface
 {
 
-	public function onKernelResponse(FilterResponseEvent $event): void
+	public function onKernelResponse(ResponseEvent $event): void
 	{
 		$response = $event->getResponse();
 		$request = $event->getRequest();

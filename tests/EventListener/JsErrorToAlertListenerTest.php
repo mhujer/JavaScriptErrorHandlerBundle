@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -52,7 +52,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new Response($responseBody);
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -108,7 +108,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new Response(self::BASIC_HTML, $statusCode);
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -139,7 +139,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new StreamedResponse();
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -156,7 +156,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new Response(self::BASIC_HTML);
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::SUB_REQUEST,
@@ -176,7 +176,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new Response('<div>Some content</div>');
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -196,7 +196,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new Response(self::BASIC_HTML);
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(true),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -216,7 +216,7 @@ class JsErrorToAlertListenerTest extends TestCase
 	{
 		$response = new Response(self::BASIC_HTML);
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(false, 'json'),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -237,7 +237,7 @@ class JsErrorToAlertListenerTest extends TestCase
 		$response = new Response(self::BASIC_HTML);
 		$response->headers->set('Content-Disposition', 'attachment; filename=test.html');
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::MASTER_REQUEST,
@@ -258,7 +258,7 @@ class JsErrorToAlertListenerTest extends TestCase
 		$response = new Response(self::BASIC_HTML);
 		$response->headers->set('Content-Type', 'text/xml');
 
-		$event = new FilterResponseEvent(
+		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
 			HttpKernelInterface::MASTER_REQUEST,
