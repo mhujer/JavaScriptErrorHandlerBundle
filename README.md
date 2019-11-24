@@ -55,6 +55,9 @@ Author
 Changelog
 ----------
 
+### 1.4 (2019-11-24)
+- Symfony 5.0 compatibility
+
 ### 1.3 (2018-11-30)
 - Symfony 4.2 compatibility
 - dropped support for PHP 7.1 as it is no longer supported
