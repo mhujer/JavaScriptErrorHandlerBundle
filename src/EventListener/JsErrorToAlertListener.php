@@ -1,16 +1,13 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace Mhujer\JavaScriptErrorHandlerBundle\EventListener;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-class JsErrorToAlertListener implements EventSubscriberInterface
+class JsErrorToAlertListener implements \Symfony\Component\EventDispatcher\EventSubscriberInterface
 {
 
 	public function onKernelResponse(ResponseEvent $event): void

@@ -1,17 +1,14 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace Mhujer\JavaScriptErrorHandlerBundle\DependencyInjection;
 
-use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
-use PHPUnit\Framework\TestCase;
+use PackageVersions\Versions;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-class ConfigurationTest extends TestCase
+class ConfigurationTest extends \PHPUnit\Framework\TestCase
 {
 
-	use ConfigurationTestCaseTrait;
+	use \Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
 
 	public function testEmptyConfigurationIsValid(): void
 	{
@@ -44,16 +41,30 @@ class ConfigurationTest extends TestCase
 		);
 	}
 
-	public function testEnabledConfigurationIsValidXX(): void
+	public function testEnabledConfigurationInvalidType(): void
 	{
-		$this->assertConfigurationIsInvalid(
-			[
+		// there are different messages for Symfony 4.4 and 5.1, @see https://github.com/symfony/symfony/pull/35945
+
+		// symfony/config 4.4
+		if (preg_match('~^v4\.4~', Versions::getVersion('symfony/config')) === 1) {
+			$this->assertConfigurationIsInvalid(
 				[
-					'enabled' => 1,
+					[
+						'enabled' => 1,
+					],
 				],
-			],
-			'Invalid type for path "java_script_error_handler.enabled". Expected boolean, but got integer.'
-		);
+				'Invalid type for path "java_script_error_handler.enabled". Expected boolean, but got integer.'
+			);
+		} else {
+			$this->assertConfigurationIsInvalid(
+				[
+					[
+						'enabled' => 1,
+					],
+				],
+				'Invalid type for path "java_script_error_handler.enabled". Expected "bool", but got "int".'
+			);
+		}
 	}
 
 	public function testInvalidConfigurationIsInvalid(): void

@@ -1,10 +1,7 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace Mhujer\JavaScriptErrorHandlerBundle\EventListener;
 
-use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +12,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-class JsErrorToAlertListenerTest extends TestCase
+class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 {
 
 	public function testIsSubscribedToKernelResponse(): void
@@ -41,7 +38,6 @@ class JsErrorToAlertListenerTest extends TestCase
 		$injectScriptReflection->invoke($listener, $response, Request::create('/'));
 		$this->assertSame($expectedResponse, $response->getContent());
 	}
-
 
 	/**
 	 * @dataProvider htmlScriptDataProvider

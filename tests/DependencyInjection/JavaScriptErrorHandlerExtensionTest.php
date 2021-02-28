@@ -1,13 +1,10 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace Mhujer\JavaScriptErrorHandlerBundle\DependencyInjection;
 
-use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Mhujer\JavaScriptErrorHandlerBundle\EventListener\JsErrorToAlertListener;
 
-class JavaScriptErrorHandlerExtensionTest extends AbstractExtensionTestCase
+class JavaScriptErrorHandlerExtensionTest extends \Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase
 {
 
 	private const LISTENER_CLASS_NAME = JsErrorToAlertListener::class;

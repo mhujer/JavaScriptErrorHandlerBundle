@@ -1,15 +1,12 @@
-<?php
-
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace Mhujer\JavaScriptErrorHandlerBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class JavaScriptErrorHandlerExtension extends Extension
+class JavaScriptErrorHandlerExtension extends \Symfony\Component\DependencyInjection\Extension\Extension
 {
 
 	/**
@@ -38,7 +35,7 @@ class JavaScriptErrorHandlerExtension extends Extension
 	 */
 	public function getConfiguration(array $config, ContainerBuilder $container): Configuration
 	{
-		return new Configuration($container->getParameter('kernel.debug'));
+		return new Configuration((bool) $container->getParameter('kernel.debug'));
 	}
 
 }
