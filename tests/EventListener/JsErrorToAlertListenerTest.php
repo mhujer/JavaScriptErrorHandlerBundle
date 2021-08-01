@@ -271,6 +271,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 	}
 
 	/**
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
 	 * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpKernel\Kernel
 	 */
 	protected function getKernelMock()
@@ -284,6 +285,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 	}
 
 	/**
+	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
 	 * @param bool $isXmlHttpRequest
 	 * @param string $requestFormat
 	 * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\Request

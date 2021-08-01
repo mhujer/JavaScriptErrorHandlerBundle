@@ -27,14 +27,14 @@
 	},
 	"require-dev": {
 		"composer/package-versions-deprecated": "1.11.99.1",
-		"consistence-community/coding-standard": "3.11.0",
+		"consistence-community/coding-standard": "3.11.1",
 		"matthiasnoback/symfony-config-test": "4.2.1",
 		"matthiasnoback/symfony-dependency-injection-test": "4.2.1",
-		"php-parallel-lint/php-parallel-lint": "1.2.0",
-		"phpstan/phpstan": "0.12.79",
-		"phpstan/phpstan-phpunit": "0.12.17",
-		"phpstan/phpstan-symfony": "0.12.20",
-		"phpunit/phpunit": "9.5.2"
+		"php-parallel-lint/php-parallel-lint": "1.3.0",
+		"phpstan/phpstan": "0.12.94",
+		"phpstan/phpstan-phpunit": "0.12.21",
+		"phpstan/phpstan-symfony": "0.12.41",
+		"phpunit/phpunit": "9.5.8"
 	},
 	"autoload": {
 		"psr-4": {
@@ -65,8 +65,8 @@
 			"@phpunit"
 		],
 		"phplint": "parallel-lint src tests",
-		"phpcs": "phpcs src tests",
-		"phpcbf": "phpcbf src tests",
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf",
 		"phpstan": "phpstan analyse -c phpstan.neon src tests --level 8 --no-progress",
 		"phpunit": "phpunit"
 	}
