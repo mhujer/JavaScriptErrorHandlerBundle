@@ -15,7 +15,7 @@ class JsErrorToAlertListener implements \Symfony\Component\EventDispatcher\Event
 		$response = $event->getResponse();
 		$request = $event->getRequest();
 
-		if (!$event->isMasterRequest()) {
+		if (!$event->isMainRequest()) {
 			return;
 		}
 

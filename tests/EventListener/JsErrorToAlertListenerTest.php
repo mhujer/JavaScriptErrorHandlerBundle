@@ -51,7 +51,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -107,7 +107,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -138,7 +138,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -175,7 +175,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -195,7 +195,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(true),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -215,7 +215,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(false, 'json'),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -236,7 +236,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
@@ -257,7 +257,7 @@ class JsErrorToAlertListenerTest extends \PHPUnit\Framework\TestCase
 		$event = new ResponseEvent(
 			$this->getKernelMock(),
 			$this->getRequestMock(),
-			HttpKernelInterface::MASTER_REQUEST,
+			HttpKernelInterface::MAIN_REQUEST,
 			$response
 		);
 
