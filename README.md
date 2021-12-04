@@ -55,6 +55,10 @@ Author
 Changelog
 ----------
 
+### 1.7 (2021-12-04)
+- require Symfony 5.4+
+- PHP 8.1 support
+
 ### 1.6 (2021-08-01)
 - require PHP 8.0+
 - require Symfony 5.3+
